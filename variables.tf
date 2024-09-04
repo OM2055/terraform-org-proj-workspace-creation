@@ -7,6 +7,7 @@ variable "tfe_token" {
 variable "organization_name" {
   description = "The name of the Terraform Cloud organization."
   type        = string
+  default     = "TCS_BG"  # "unique-organization-name"  # Ensure this name is unique
 }
 
 variable "organization_email" {
