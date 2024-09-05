@@ -1,6 +1,11 @@
+#output "organization_id" {
+#  description = "The ID of the created organization."
+#  value       = tfe_organization.org.id
+#}
+
 output "organization_id" {
-  description = "The ID of the created organization."
-  value       = tfe_organization.org.id
+  description = "The ID of the existing organization."
+  value       = data.tfe_organization.existing_org.id
 }
 
 output "project_1_id" {
