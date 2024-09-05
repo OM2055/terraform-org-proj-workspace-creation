@@ -10,11 +10,11 @@ module "project_1" {
   organization_id  = data.tfe_organization.existing_org.id
 }
 
-module "project_2" {
-  source           = "./modules/projects"
-  project_name     = var.project_2_name
-  organization_id  = data.tfe_organization.existing_org.id
-}
+#module "project_2" {
+#  source           = "./modules/projects"
+#  project_name     = var.project_2_name
+#  organization_id  = data.tfe_organization.existing_org.id
+#}
 # Create workspaces in the project
 # module "workspace_1" {
 #  source       = "../workspaces"
