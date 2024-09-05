@@ -43,13 +43,13 @@ resource "tfe_project" "project_1" {
 
 # Create projects
 module "project_1" {
-  source           = "./modules/projects"
+  source           = "../modules/projects"
   project_name     = var.project_1_name
   organization_id  = tfe_organization.org.id
 }
 
 module "project_2" {
-  source           = "./modules/projects"
+  source           = "../modules/projects"
   project_name     = var.project_2_name
   organization_id  = tfe_organization.org.id
 }
