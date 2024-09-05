@@ -26,8 +26,19 @@ provider "tfe" {
 #}
 
 # Use an existing organization by referencing it directly
+#data "tfe_organization" "existing_org" {
+#  name = var.organization_name
+#}
+
+# Assuming organization already exists
 data "tfe_organization" "existing_org" {
   name = var.organization_name
+}
+
+# Example resource using the existing organization
+resource "tfe_project" "project_1" {
+  name         = var.project_1_name
+  organization = data.tfe_organization.existing_org.id
 }
 
 # Create projects
