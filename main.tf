@@ -20,14 +20,9 @@ provider "tfe" {
 }
 
 # Create organization
-#resource "tfe_organization" "org" {
-#  name  = var.organization_name
-#  email = var.organization_email
-#}
-
-# Use an existing organization by referencing it directly
-data "tfe_organization" "existing_org" {
-  name = var.organization_name
+resource "tfe_organization" "org" {
+  name  = var.organization_name
+  email = var.organization_email
 }
 
 # Create projects
@@ -38,7 +33,7 @@ module "project_1" {
 }
 
 module "project_2" {
-  source           = "./modules/projects"
+  source           = "./modules/project"
   project_name     = var.project_2_name
   organization_id  = tfe_organization.org.id
 }
